@@ -41,14 +41,15 @@ updating it won't be as convenient as using brew.
 
 ## 3. Configure Emacs
 Configuring Emacs from scratch could take you a loooong time. For your convenience, I've uploaded a minimal `init.el`
-file that provides some basic functionalities (for racket-mode) and fixes.
+file that provides some basic functionalities (for `racket-mode`) and fixes.
 
 1. Grab the file [`init.el`](./init.el) from this repo
 2. Put it in the `~/.emacs.d/` folder
 3. Restart your Emacs.app and wait for it to install packages (warnings are normal).
 
 Should you need to make your own customizations, you should edit `init.el`.
-Should you need to add your own (cool) packages, the simplest way to add new packages is by the following:
+Should you need to add a new package, the simplest way to add new packages is
+by the following:
 
 1. Open Emacs.app
 2. Using `M-x` then type `package-install-package`
@@ -56,6 +57,5 @@ Should you need to add your own (cool) packages, the simplest way to add new pac
 4. Restart Emacs.app
 
 ## 4. Questions
-Please direct all Emacs questions to either: `cfactora@indiana.edu`, `kz5@indiana.edu`
-
+For more questions on Emacs, please open a GitHub issue here: https://github.com/keyanzhang/c311-get-started/issues
 
