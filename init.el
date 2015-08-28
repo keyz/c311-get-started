@@ -67,9 +67,6 @@
 (eval-after-load "racket-mode"
   '(define-key racket-mode-map (kbd "M-RET") 'racket-run))
 
-(racket-racket-program "racket")
-(racket-raco-program "raco")
-
 
 ;; auto-complete-mode
 (add-hook 'prog-mode-hook 'auto-complete-mode)
@@ -96,7 +93,7 @@
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-(setq bkup-dir "/Users/k/.emacs.d/bkup/") ;; no more temp files in the folder
+(setq bkup-dir "~/.emacs.d/bkup/") ;; no more temp files in the folder
 
 (setq backup-directory-alist
       `((".*" . ,bkup-dir)))
@@ -157,4 +154,3 @@
     (setq mac-command-modifier 'hyper)))
 
 (mac-set-option-as-meta)
-
