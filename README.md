@@ -56,6 +56,30 @@ by the following:
 3. Type the name of the package you want to install (e.g. `markdown-mode+`, the mode used for editing this file)
 4. Restart Emacs.app
 
-## 4. Questions
+## 4. Testing Homework
+
+* **The Easy Way**:
+   * Download the appropriate test file (e.g. "a1-student-tests.rkt")
+   * Create a folder with the appropriate assignment name (e.g. `a1`)
+   * Put the test file and the file containing your homework solutions in the folder
+   * **Important**: Your homework file should ONLY contain problem solutions and `#lang racket` at the top
+
+Then, in Terminal, do the following:
+
+```
+$ racket
+Welcome to Racket v6.2.1.
+-> (require "a1-student-tests.rkt")
+-> (test-file)
+
+[... Test suite results appear here ...]
+```
+
+You should now see the results of running the test suite on your homework file.
+
+* **A Cooler Way**:
+    * 
+
+## 5. Questions
 For more questions on Emacs, please open a GitHub issue here: https://github.com/keyanzhang/c311-get-started/issues
 
