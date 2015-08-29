@@ -1,6 +1,6 @@
 # c311-get-started
 
-This document will serve as an (opinionated) guide for setting up Racket and Emacs on a **Mac OS X**.
+This document will serve as an (opinionated) guide for setting up Racket and Emacs on a Mac OS X.
 
 ## 1. Get Racket
 1. Download the latest version of Racket from http://download.racket-lang.org/. Make sure you choose "Racket" as the distribution; the platform should probably just be "Mac OS X (Intel 64-bit)".
