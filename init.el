@@ -1,3 +1,15 @@
+;; part of https://github.com/keyanzhang/c311-get-started
+
+;; by default, paredit will be diabled.
+;; we highly recommend activating paredit for Scheme/Racket/Lisp modes,
+;; but we understand that it could take a while to get used to it.
+
+;; please read http://danmidwood.com/content/2014/11/21/animated-paredit.html first;
+;; when you are ready, change the following `nil` to `t` to activate paredit.
+
+(setq paredit-enabled nil) ;; @CHANGEME
+
+
 ;; packages
 (require 'package)
 (add-to-list 'package-archives
@@ -11,14 +23,14 @@
 
 (setq pkg-ls
       '(adaptive-wrap
-        auto-complete
+        company
         exec-path-from-shell
         helm
         paredit
         racket-mode
         rainbow-delimiters))
 
-(add-to-list 'package-pinned-packages '(auto-complete . "melpa-stable") t)
+(add-to-list 'package-pinned-packages '(company . "melpa-stable") t)
 (add-to-list 'package-pinned-packages '(exec-path-from-shell . "melpa-stable") t)
 (add-to-list 'package-pinned-packages '(helm . "melpa-stable") t)
 (add-to-list 'package-pinned-packages '(paredit . "melpa-stable") t)
@@ -35,6 +47,7 @@
 (let ((default-directory "~/.emacs.d/elpa"))
   (normal-top-level-add-subdirs-to-load-path))
 
+
 ;; get $PATH from shell
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
@@ -46,11 +59,10 @@
   (interactive)
   (set (make-local-variable 'paredit-space-for-delimiter-predicates)
        '((lambda (endp delimiter) nil)))
-  (define-key prog-mode-map "{" 'paredit-open-curly)
-  (define-key prog-mode-map "}" 'paredit-close-curly)
   (paredit-mode 1))
 
-(add-hook 'racket-mode-hook 'enable-nospace-curly-paredit-mode)
+(if paredit-enabled
+    (add-hook 'racket-mode-hook 'enable-nospace-curly-paredit-mode))
 
 
 ;; rainbow-delimiters-mode
@@ -63,13 +75,12 @@
       '(pmatch pmatch-who))
 
 (eval-after-load "racket-mode"
-  '(define-key racket-mode-map (kbd "C-c C-c") 'racket-send-definition))
-(eval-after-load "racket-mode"
   '(define-key racket-mode-map (kbd "M-RET") 'racket-run))
 
 
-;; auto-complete-mode
-(add-hook 'prog-mode-hook 'auto-complete-mode)
+;; company-mode
+(add-hook 'after-init-hook 'global-company-mode)
+(setq company-idle-delay 0)
 
 
 ;; linum-mode
@@ -125,6 +136,7 @@
 
 ;; mac default shortcuts
 (global-set-key [(hyper a)] 'mark-whole-buffer)
+(global-set-key [(hyper x)] 'kill-region)
 (global-set-key [(hyper v)] 'yank)
 (global-set-key [(hyper c)] 'kill-ring-save)
 (global-set-key [(hyper s)] 'save-buffer)
