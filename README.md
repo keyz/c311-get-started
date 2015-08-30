@@ -1,6 +1,6 @@
 # c311-get-started
 
-This document will serve as an (opinionated) guide for setting up Racket and Emacs on a Mac OS X.
+This document will serve as an (opinionated) guide for setting up Racket and Emacs on a Mac OS X. If you are on a Windows machine, [@jasonhemann](https://github.com/jasonhemann)'s [note](https://cgi.soic.indiana.edu/~c311/lib/exe/fetch.php?media=windows.pdf) should help.
 
 ## 1. Get Racket
 1. Download the latest version of Racket from http://download.racket-lang.org/. Make sure you choose "Racket" as the distribution; the platform should probably just be "Mac OS X (Intel 64-bit)".
@@ -29,7 +29,7 @@ There are quite a few Emacs versions for Mac. However, the most handy one I've f
   - `brew linkapps emacs-mac`
 4. You should be able to find `Emacs.app` in your `Applications` folder.
 5. If you want to be able to launch **GUI** Emacs via the Terminal, add `alias e='open -a /Applications/Emacs.app'` to your `.bash_profile`.
-5. In the future, to upgrade your Emacs, run `brew update && brew upgrade --all`.
+5. In the future, to upgrade your Emacs, run `brew update && brew upgrade emacs-mac`.
 
 ## 3. Configure Emacs
 Configuring Emacs from scratch could take you a loooong time. For your convenience, we've uploaded a minimal `init.el` file that provides some basic functionalities (for `racket-mode`) and fixes.
@@ -41,7 +41,7 @@ Configuring Emacs from scratch could take you a loooong time. For your convenien
 ### What's included in this `init.el`?
 - Automatic package installation, including:
   - `racket-mode` for all the greatness.
-    - We rebind the `racket-run` command to `meta-enter` (`option-enter`). This is basically equivalent with DrRacket's `Run` button. If you don't like the keybinding, just modify it in `init.rl`.
+    - We rebind the `racket-run` command to `meta-enter` (`option-enter`). This is basically equivalent with DrRacket's `Run` button. If you don't like the keybinding, just modify it in `init.el`.
   - `helm` cuz nobody can memorize all the emacs functions.
   - `company` for auto completion.
   - `rainbow-delimiters` so we won't need to get LASIK.
