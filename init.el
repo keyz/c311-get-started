@@ -80,7 +80,6 @@
 
 ;; company-mode
 (add-hook 'after-init-hook 'global-company-mode)
-(setq company-idle-delay 0)
 
 
 ;; linum-mode
@@ -122,8 +121,8 @@
   (add-hook 'visual-line-mode-hook 'my-activate-adaptive-wrap-prefix-mode))
 
 (add-hook 'minibuffer-setup-hook
-    (lambda ()
-      (visual-line-mode -1)))
+          (lambda ()
+            (visual-line-mode -1)))
 
 
 ;; no tool bar
@@ -152,8 +151,8 @@
   (interactive)
   (if (eq mac-option-modifier nil)
       (progn
-  (setq mac-option-modifier 'meta)
-  (setq mac-command-modifier 'hyper))
+        (setq mac-option-modifier 'meta)
+        (setq mac-command-modifier 'hyper))
     (progn
       (setq mac-option-modifier nil)
       (setq mac-command-modifier 'meta))))
