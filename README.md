@@ -6,8 +6,8 @@ This document will serve as an (opinionated) guide for setting up Racket and Ema
 1. Download the latest version of Racket from http://download.racket-lang.org/. Make sure you choose "Racket" as the distribution; the platform should probably just be "Mac OS X (Intel 64-bit)".
 2. Open the downloaded `racket-blabla.dmg`. Drag the entire `Racket v6.x.x` folder to `Applications` as instructed.
 3. Add `racket` and `raco` to your `$PATH` so that they can be easily found.
-   - Edit your `~/.bash_profile` (or `~/.zshrc` if you use zsh). Add the following line to the end of file:
-   - `export PATH="/Applications/Racket v6.2.1/bin":$PATH`
+   - Edit your `~/.bash_profile` (or `~/.zshrc` if you use zsh). Run the following line in your terminal:
+   - `echo 'export PATH="/Applications/Racket v6.2.1/bin":$PATH' >> ~/.bash_profile`
      - As of August 2015, the latest version of Racket is v6.2.1; if you download a newer version of Racket, make sure you to edit the version above.
 4. Activate these changes. Open a terminal window — Mac comes with `Terminal.app` by default; it's not bad but [iTerm2](https://www.iterm2.com/) is a better and free alternative.
    - Run the following commands in your terminal:
@@ -20,7 +20,7 @@ There are quite a few Emacs versions for Mac. However, the most handy one I've f
 
 1. Get brew.
   - Go to http://brew.sh/
-  - Follow the instruction (paste the one-liner at a Terminal prompt).
+  - Follow the instruction (paste the one-liner at a terminal prompt).
 2. Update brew.
   - `brew update`
 3. Install Emacs via brew.
@@ -28,7 +28,7 @@ There are quite a few Emacs versions for Mac. However, the most handy one I've f
   - `brew install emacs-mac` (or `brew install emacs-mac --with-modern-icon` if you don't like the default icon)
   - `brew linkapps emacs-mac`
 4. You should be able to find `Emacs.app` in your `Applications` folder.
-5. If you want to be able to launch **GUI** Emacs via the Terminal, add `alias e='open -a /Applications/Emacs.app'` to your `.bash_profile`.
+5. If you want to be able to launch **GUI** Emacs via the terminal, add `alias e='open -a /Applications/Emacs.app'` to your `.bash_profile`.
 5. In the future, to upgrade your Emacs, run `brew update && brew upgrade emacs-mac`.
 
 ## 3. Configure Emacs
