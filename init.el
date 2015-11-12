@@ -71,11 +71,18 @@
 
 
 ;; racket-mode
-(mapc (lambda (x) (put x 'racket-indent-function 1))
-      '(pmatch pmatch-who))
-
 (eval-after-load "racket-mode"
   '(define-key racket-mode-map (kbd "M-RET") 'racket-run))
+
+(add-hook 'racket-mode-hook      #'racket-unicode-input-method-enable)
+(add-hook 'racket-repl-mode-hook #'racket-unicode-input-method-enable)
+
+(mapc (lambda (pr) (put (car pr) 'racket-indent-function (cdr pr)))
+      '((conde . 0)
+        (fresh . 1)
+        (run . 1)
+        (run* . 1)
+        (run . 2)))
 
 
 ;; company-mode
