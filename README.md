@@ -7,8 +7,8 @@ This document will serve as an (opinionated) guide for setting up Racket and Ema
 2. Open the downloaded `racket-blabla.dmg`. Drag the entire `Racket v6.x.x` folder to `Applications` as instructed.
 3. Add `racket` and `raco` to your `$PATH` so that they can be easily found.
    - Edit your `~/.bash_profile` (or `~/.zshrc` if you use zsh). Run the following line in your terminal:
-   - `echo 'export PATH="/Applications/Racket v6.3/bin":$PATH' >> ~/.bash_profile`
-     - As of August 2015, the latest version of Racket is v6.3; if you download a newer version of Racket, make sure you to edit the version above.
+   - `echo 'export PATH="/Applications/Racket v6.4/bin":$PATH' >> ~/.bash_profile`
+     - As of February 2016, the latest version of Racket is v6.4; if you download a newer version of Racket, make sure you to edit the version above.
 4. Activate these changes. Open a terminal window — Mac comes with `Terminal.app` by default; it's not bad but [iTerm2](https://www.iterm2.com/) is a better and free alternative.
    - Run the following commands in your terminal:
    - `source ~/.bash_profile`
